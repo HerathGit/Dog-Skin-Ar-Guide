@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog Skin AR Guidance</title>
+    <!-- A-Frame and AR.js Libraries -->
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar.min.js"></script>
+    <style>
+        body, html { margin: 0; padding: 0; overflow: hidden; }
+    </style>
+</head>
+<body>
+    <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;">
+        <!-- Text guidance for the user to align correctly -->
+        <a-text value="Align camera with dog skin" position="0 1 -3" color="black" width="4"></a-text>
+        
+        <!-- Marker to help guide where the dog's skin should be aligned for capturing -->
+        <a-entity
+            geometry="primitive: ring; radiusInner: 0.7; radiusOuter: 0.8"
+            material="color: yellow; opacity: 0.8"
+            position="0 1.5 -3">
+        </a-entity>
+
+        <!-- Adding instructions in 3D space for the user -->
+        <a-text value="Ensure clear view of dog's skin area" position="0 0.5 -3" color="red" width="5"></a-text>
+        <a-text value="Press Capture to take the image" position="0 0 -3" color="blue" width="5"></a-text>
+    </a-scene>
+</body>
+</html>
