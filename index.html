@@ -13,19 +13,43 @@
 </head>
 <body>
     <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;">
-        <!-- Text guidance for the user to align correctly, minimized for mobile screens -->
-        <a-text value="Align camera with dog skin" position="0 0.6 -2" color="black" width="2"></a-text>
         
-        <!-- Smaller marker ring for dog skin alignment -->
+        <!-- Smaller text guidance for alignment -->
+        <a-text value="Align with dog's skin" position="0 0.4 -1.5" color="black" width="1.5"></a-text>
+
+        <!-- Smaller marker ring for alignment -->
         <a-entity
-            geometry="primitive: ring; radiusInner: 0.3; radiusOuter: 0.4"
+            geometry="primitive: ring; radiusInner: 0.15; radiusOuter: 0.2"
             material="color: yellow; opacity: 0.8"
-            position="0 1 -2">
+            position="0 0.5 -1.5">
         </a-entity>
 
-        <!-- Adjusted instructions for mobile screens -->
-        <a-text value="Ensure clear view of dog's skin area" position="0 0.3 -2" color="red" width="2.5"></a-text>
-        <a-text value="Press Capture to take the image" position="0 0.1 -2" color="blue" width="2.5"></a-text>
+        <!-- Smaller instructions below the marker -->
+        <a-text value="Ensure clear view of skin" position="0 0.2 -1.5" color="red" width="1.8"></a-text>
+        <a-text value="Tap Capture to take image" position="0 0.05 -1.5" color="blue" width="1.8"></a-text>
+
+        <!-- Smaller directional arrows pointing to marker -->
+        <a-entity
+            geometry="primitive: cone; height: 0.1; radiusBottom: 0.03"
+            material="color: green"
+            position="-0.3 0.6 -1.4"
+            rotation="0 0 -30">
+        </a-entity>
+        <a-entity
+            geometry="primitive: cone; height: 0.1; radiusBottom: 0.03"
+            material="color: green"
+            position="0.3 0.6 -1.4"
+            rotation="0 0 30">
+        </a-entity>
+        <a-entity
+            geometry="primitive: cone; height: 0.1; radiusBottom: 0.03"
+            material="color: green"
+            position="0 0.6 -1.4"
+            rotation="0 0 0">
+        </a-entity>
+
+        <!-- Smaller alignment instruction below marker -->
+        <a-text value="Position here" position="0 0.7 -1.5" color="yellow" width="1.5"></a-text>
     </a-scene>
 </body>
 </html>
